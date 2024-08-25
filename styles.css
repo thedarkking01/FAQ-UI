@@ -1,0 +1,74 @@
+/* General styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #0d0d0d;
+    margin: 0;
+    padding: 0;
+}
+
+.faq-container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* FAQ styles */
+.faq {
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+}
+
+.faq-label {
+    display: block;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 10px 0;
+    color: #082b77;
+    position: relative;
+}
+
+.faq-label::after {
+    content: '+';
+    position: absolute;
+    right: 0;
+    font-size: 20px;
+    transition: transform 0.3s;
+}
+
+.faq input[type="checkbox"] {
+    display: none;
+}
+
+.faq input[type="checkbox"]:checked ~ .faq-content {
+    max-height: 100px;
+    padding-top: 10px;
+}
+
+.faq input[type="checkbox"]:checked ~ .faq-label::after {
+    transform: rotate(45deg);
+}
+
+.faq-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    padding: 0 0 10px;
+    background-color: #e48b16;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .faq-container {
+        padding: 10px;
+        margin: 20px;
+    }
+}
